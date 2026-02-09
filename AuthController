@@ -1,0 +1,13 @@
+@RestController
+@RequestMapping("/api/auth")
+public class AuthController {
+
+@Autowired
+UserRepository repo;
+
+@PostMapping("/register")
+public String register(@RequestBody User user){
+repo.save(user);
+return "User Registered";
+}
+}
